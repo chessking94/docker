@@ -1,0 +1,31 @@
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - proxy
+      - portainer
+      - ghost
+      - ittools
+
+networks:
+  proxy:
+    name: proxy-bridge
+    external: true
+  portainer:
+    name: portainer-network
+    external: false
+  ghost:
+    name: ghost-network
+    external: false
+  ittools:
+    name: ittools-network
+    external: false

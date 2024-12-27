@@ -1,0 +1,14 @@
+services:
+  app:
+    image: 'corentinth/it-tools:latest'
+    container_name: it-tools
+    restart: unless-stopped
+    ports:
+      - '8080:80'
+    networks:
+      - ittools
+
+networks:
+  ittools:
+    name: ittools-network
+    external: true

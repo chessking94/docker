@@ -1,0 +1,16 @@
+# all environment files
+.env
+
+# ghost
+/ghost/content/
+/ghost/mysql/
+
+# it-tools
+# no directories
+
+# nginx-proxy-manager
+/nginx-proxy-manager/data/
+/nginx-proxy-manager/letsencrypt/
+
+# portainer
+/portainer/portainer_data/
