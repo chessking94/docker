@@ -4,7 +4,7 @@ services:
     image: ghost:latest
     restart: unless-stopped
     ports:
-      - "2368:2368"
+      - 2368:2368
     networks:
       - ghost
       - backend
@@ -41,4 +41,3 @@ networks:
   backend:
     name: ghost-backend
     external: false
-

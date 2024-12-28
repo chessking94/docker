@@ -1,0 +1,31 @@
+services:
+  speedtest-tracker:
+    image: lscr.io/linuxserver/speedtest-tracker:latest
+    container_name: speedtest-tracker
+    restart: unless-stopped
+    ports:
+      - 5480:80
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DB_CONNECTION=sqlite
+      - SPEEDTEST_SCHEDULE=0 * * * *
+      - PRUNE_RESULTS_OLDER_THAN=7
+      - DISPLAY_TIMEZONE=${DISPLAY_TIMEZONE}
+      - APP_NAME=${APP_NAME}
+      - APP_KEY=${APP_KEY}
+      - APP_URL=${APP_URL}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - ADMIN_NAME=${ADMIN_NAME}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+    volumes:
+      - ./config:/config
+      - ./config/keys:/config/keys
+    networks:
+      - speedtest
+
+networks:
+  speedtest:
+    name: speedtest-networok
+    external: true

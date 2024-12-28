@@ -1,12 +1,12 @@
 services:
   app:
-    image: 'jc21/nginx-proxy-manager:latest'
+    image: jc21/nginx-proxy-manager:latest
     container_name: nginx-proxy-manager
     restart: unless-stopped
     ports:
-      - '80:80'
-      - '81:81'
-      - '443:443'
+      - 80:80
+      - 81:81
+      - 443:443
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
@@ -15,6 +15,7 @@ services:
       - portainer
       - ghost
       - ittools
+      - speedtest
 
 networks:
   proxy:
@@ -28,4 +29,7 @@ networks:
     external: false
   ittools:
     name: ittools-network
+    external: false
+  speedtest:
+    name: speedtest-networok
     external: false
