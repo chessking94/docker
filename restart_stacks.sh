@@ -4,8 +4,16 @@ DOCKER_ROOT="/srv/docker"
 # stack directories; keep reverse proxy last!
 SUB_DIRS=("ghost" "speedtest-tracker" "it-tools" "portainer" "nginx-proxy-manager")
 
+# directories to not fully stop the container
+SKIP_STOP_DIRS=("nginx-proxy-manager")
+
 # stop all stacks
 for SUB_DIR in "${SUB_DIRS[@]}"; do
+    if [[ " ${SKIP_STOP_DIRS[*]} " =~ " ${SUB_DIR} " ]]; then
+        echo "skipping ${SUB_DIR}"
+        continue
+    fi
+
     echo "stopping ${SUB_DIR}"
     cd "${DOCKER_ROOT}/${SUB_DIR}" || {
         echo "Failed to change to ${SUB_DIR} directory"
