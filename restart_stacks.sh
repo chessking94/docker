@@ -2,7 +2,7 @@
 DOCKER_ROOT="/srv/docker"
 
 # stack directories; keep reverse proxy last!
-SUB_DIRS=("ghost" "speedtest-tracker" "it-tools" "portainer" "nginx-proxy-manager")
+SUB_DIRS=("homepage" "ghost" "speedtest-tracker" "it-tools" "portainer" "nginx-proxy-manager")
 
 # directories to not fully stop the container
 SKIP_STOP_DIRS=("nginx-proxy-manager")
