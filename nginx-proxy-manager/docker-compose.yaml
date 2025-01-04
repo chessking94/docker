@@ -25,7 +25,7 @@ networks:
   ghost:
     name: ghost-network
     external: false
-  hostpage:
+  homepage:
     name: homepage-network
     external: false
   ittools:
