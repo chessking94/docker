@@ -44,7 +44,7 @@
     - Gitea:
         # icon:
         ping: {{HOMEPAGE_VAR_WIDGET_GITEA_URL}}
-        href: {{HOMEPAGE_VAR_WIDGET_GITEA_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_GITEA_OPENURL}}
         description: Git Repositories
         widget:
             type: gitea
