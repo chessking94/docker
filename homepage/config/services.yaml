@@ -80,6 +80,17 @@
             url: {{HOMEPAGE_VAR_WIDGET_STT_URL}}
             fields: ["download", "upload", "ping"]
 
+    - Uptime-Kuma:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_UTK_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_UTK_URL}}
+        description: Tracking network uptime
+        widget:
+            type: uptimekuma
+            url: {{HOMEPAGE_VAR_WIDGET_UTK_URL}}
+            fields: ["up", "down", "uptime", "incident"]
+            slug: homepage
+
 #     - bookstack:
 
 # - Hosts:

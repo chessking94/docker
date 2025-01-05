@@ -20,3 +20,6 @@
 
 # speedtest-tracker
 /speedtest-tracker/config/
+
+# uptime-kuma
+/uptime-kuma/data/

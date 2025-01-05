@@ -17,6 +17,7 @@ services:
       - ittools
       - portainer
       - speedtest
+      - uptimekuma
 
 networks:
   proxy:
@@ -35,5 +36,8 @@ networks:
     name: portainer-network
     external: false
   speedtest:
-    name: speedtest-networok
+    name: speedtest-network
+    external: false
+  uptimekuma:
+    name: uptimekuma-network
     external: false
