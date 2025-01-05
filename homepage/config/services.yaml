@@ -1,0 +1,140 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Hosts:
+    - Proxmox - DAGOBAH:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
+        description: Container Management
+        widget:
+            type: proxmox
+            url: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
+            fields: ["vms", "lxc", "resources.cpu", "resources.mem"]
+            username: {{HOMEPAGE_VAR_WIDGET_PROX_USER}}
+            password: {{HOMEPAGE_VAR_WIDGET_PROX_PASS}}
+            node: DAGOBAH
+    - Proxmox - KAMINO:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
+        description: Container Management
+        widget:
+            type: proxmox
+            url: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
+            fields: ["vms", "lxc", "resources.cpu", "resources.mem"]
+            username: {{HOMEPAGE_VAR_WIDGET_PROX_USER}}
+            password: {{HOMEPAGE_VAR_WIDGET_PROX_PASS}}
+            node: KAMINO
+
+    - Portainer:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_PORT_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_PORT_URL}}
+        description: Container Management
+        widget:
+            type: portainer
+            url: {{HOMEPAGE_VAR_WIDGET_PORT_URL}}
+            fields: ["running", "stopped", "total"]
+            env: 1
+            key: {{HOMEPAGE_VAR_WIDGET_PORT_APITOKEN}}
+
+- Development:
+    - Gitea:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_GITEA_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_GITEA_URL}}
+        description: Git Repositories
+        widget:
+            type: gitea
+            url: {{HOMEPAGE_VAR_WIDGET_GITEA_URL}}
+            fields: ["notifications", "issues", "pulls"]
+            key: {{HOMEPAGE_VAR_WIDGET_GITEA_APITOKEN}}
+
+    # - api:
+
+    # - api-qa:
+
+    # - tools:
+
+- Network:
+    - Nginx Proxy Manager:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_NPM_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_NPM_URL}}
+        description: Reverse Proxy
+        widget:
+            type: npm
+            url: {{HOMEPAGE_VAR_WIDGET_NPM_URL}}
+            username: {{HOMEPAGE_VAR_WIDGET_NPM_USER}}
+            password: {{HOMEPAGE_VAR_WIDGET_NPM_PASS}}
+
+    - Speedtest-Tracker:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_STT_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_STT_URL}}
+        description: Network Speed Tracking
+        widget:
+            type: speedtest
+            url: {{HOMEPAGE_VAR_WIDGET_STT_URL}}
+            fields: ["download", "upload", "ping"]
+
+#     - bookstack:
+
+# - Hosts:
+#     - HUNT-PC1:
+
+#     - CORUSCANT:
+
+#     - KAMINO:
+
+#     - DAGOBAH:
+
+# - Virtualization:
+#     - sqlprod01:
+
+#     - docker01:
+
+#     - git01:
+
+#     - dc02:
+
+#     - bookstack02:
+
+#     - ftp03:
+
+#     - automate03:
+
+#     - fs02:
+
+#     - iis01:
+
+#     - sqldev01:
+
+#     - test-ws19:
+
+#     - opn01:
+
+# - External:
+#     - Ghost:
+
+
+# TODO: look into the following widgets
+# Authentik
+# Cloudflare Tunnels
+# Crowdsec
+# Glaces
+# Grafana
+# Mailcow
+# Minecraft
+# NetAlertX
+# Netdata
+# OpenWeatherMap
+# OPNsense
+# PiHole
+# Prometheus
+# Scrutiny
+# Uptime Kuma
+# Watchtower
+# wg-easy

@@ -10,6 +10,8 @@ services:
     volumes:
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - .env
 
 networks:
   homepage:

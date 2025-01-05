@@ -1,0 +1,39 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Chess:
+    - Chess.com:
+        - abbr: CC
+          href: https://chess.com
+    - Chess Castle:
+        - abbr: CA
+          href: https://chesscastle.com
+    - Lichess:
+        - abbr: LC
+          href: https://lichess.org
+    - MSCA:
+        - abbr: MC
+          href: https://minnesotachess.com
+    - TWIC:
+        - abbr: TW
+          href: https://theweekinchess.com
+    - USCF:
+        - abbr: UC
+          href: https://uschess.org
+
+- Sports:
+    - MLB:
+        - abbr: BB
+          href: https://mlb.com
+    - NFL:
+        - abbr: FB
+          href: https://nfl.com
+
+- Technology:
+    - Cloudflare:
+        - abbr: CF
+          href: https://dash.cloudflare.com/login
+    - Github:
+        - abbr: GH
+          href: https://github.com

@@ -1,0 +1,21 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+# set the webpage theme, 'dark' or 'light', exlcuding this provides a toggle at the bottom of the site page
+theme: dark
+
+# indicate how links should be opened; '_blank' opens in a new tab, '_self' opens in the same tab, and '_top' opens in a new window
+target: _blank
+
+# sets the underline beneath the header; options are 'underlined', 'boxed', 'boxedWidgets', and 'clean'
+headerStyle: underlined
+
+# this defaults all Docker stats to be shown, set to 'false' to hide
+showStats: true
+
+# define service/bookmark layouts; https://gethomepage.dev/configs/settings/#layout
+layout:
+  Hosts:
+    style: row
+    columns: 3

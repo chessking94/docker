@@ -5,6 +5,9 @@
 /ghost/content/
 /ghost/mysql/
 
+# homepage
+/homepage/config/logs/
+
 # it-tools
 # no directories
 
