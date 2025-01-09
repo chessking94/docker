@@ -1,3 +1,7 @@
+# adguard
+/adguard/conf/
+/adguard/work/
+
 # all environment files
 .env
 

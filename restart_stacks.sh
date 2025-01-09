@@ -9,12 +9,13 @@ SUB_DIRS=(
     "speedtest-tracker"
     "it-tools"
     "portainer"
+    "adguard"
 )
 
 SUB_DIRS+=("nginx-proxy-manager")  # append this at the end to ensure it stays last
 
 # directories to not fully stop the container
-SKIP_STOP_DIRS=("nginx-proxy-manager")
+SKIP_STOP_DIRS=("nginx-proxy-manager" "adguard")
 
 # stop all stacks
 for SUB_DIR in "${SUB_DIRS[@]}"; do
