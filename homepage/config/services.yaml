@@ -7,7 +7,7 @@
         # icon:
         ping: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
         href: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
-        description: Container Management
+        description: Virtualization Host
         widget:
             type: proxmox
             url: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
@@ -19,7 +19,7 @@
         # icon:
         ping: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
         href: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
-        description: Container Management
+        description: Virtualization Host
         widget:
             type: proxmox
             url: {{HOMEPAGE_VAR_WIDGET_PROX_URL}}
@@ -59,6 +59,18 @@
     # - tools:
 
 - Network:
+    - AdGuard:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_ADG_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_ADG_URL}}
+        description: DNS and Ad Blocking
+        widget:
+            type: adguard
+            url: {{HOMEPAGE_VAR_WIDGET_ADG_URL}}
+            field: ["queries", "blocked", "filtered", "latency"]
+            username: {{HOMEPAGE_VAR_WIDGET_ADG_USER}}
+            password: {{HOMEPAGE_VAR_WIDGET_ADG_PASS}}
+
     - Nginx Proxy Manager:
         # icon:
         ping: {{HOMEPAGE_VAR_WIDGET_NPM_URL}}
@@ -132,20 +144,9 @@
 
 
 # TODO: look into the following widgets
-# Authentik
-# Cloudflare Tunnels
-# Crowdsec
-# Glaces
-# Grafana
-# Mailcow
-# Minecraft
-# NetAlertX
-# Netdata
-# OpenWeatherMap
-# OPNsense
-# PiHole
-# Prometheus
-# Scrutiny
-# Uptime Kuma
-# Watchtower
-# wg-easy
+# Crowdsec - on exposed services, i.e. ftp03
+# Glaces - monitors computer stats
+# Minecraft - since why not?
+# OpenWeatherMap - weather is always a nice touch
+# Watchtower - update base container images
+# wg-easy - VPN with web UI
