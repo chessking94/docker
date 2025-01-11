@@ -15,6 +15,10 @@
 # it-tools
 # no directories
 
+# netalertx
+/netalertx/config/
+/netalertx/db/
+
 # nginx-proxy-manager
 /nginx-proxy-manager/data/
 /nginx-proxy-manager/letsencrypt/

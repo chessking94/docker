@@ -1,0 +1,14 @@
+services:
+  netalertx:
+    container_name: netalertx
+    image: "jokobsk/netalertx:latest"
+    network_mode: "host"
+    restart: unless-stopped
+    ports:
+      - 9080:9080
+    volumes:
+      - ./config:/app/config
+      - ./db:/app/db
+    environment:
+      - TZ=America/Chicago
+      - PORT=9080

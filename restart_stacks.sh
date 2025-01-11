@@ -4,6 +4,7 @@ DOCKER_ROOT="/srv/docker"
 # stack directories
 SUB_DIRS=(
     "uptime-kuma"
+    "netalertx"
     "homepage"
     "ghost"
     "speedtest-tracker"

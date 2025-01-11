@@ -71,6 +71,16 @@
             username: {{HOMEPAGE_VAR_WIDGET_ADG_USER}}
             password: {{HOMEPAGE_VAR_WIDGET_ADG_PASS}}
 
+    - NetAlertX:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_NAX_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_NAX_URL}}
+        description: Monitoring local network devices
+        widget:
+            type: netalertx
+            url: {{HOMEPAGE_VAR_WIDGET_NAX_URL}}
+            field: ["total", "connected", "new_devices", "down_alerts"]
+
     - Nginx Proxy Manager:
         # icon:
         ping: {{HOMEPAGE_VAR_WIDGET_NPM_URL}}
