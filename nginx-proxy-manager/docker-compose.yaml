@@ -15,6 +15,7 @@ services:
       - ghost
       - homepage
       - ittools
+      - metabase
       - portainer
       - speedtest
       - uptimekuma
@@ -31,6 +32,9 @@ networks:
     external: false
   ittools:
     name: ittools-network
+    external: false
+  metabase:
+    name: metabase-network
     external: false
   portainer:
     name: portainer-network

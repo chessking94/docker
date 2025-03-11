@@ -1,0 +1,44 @@
+services:
+  metabase:
+    container_name: metabase
+    hostname: metabase
+    image: metabase/metabase:latest
+    restart: unless-stopped
+    ports:
+      - 4000:3000
+    networks:
+      - metabase
+      - backend
+    depends_on:
+      - postgres
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_HOST: postgres
+      MB_DB_DBNAME: ${METABASE_DB_NAME}
+      MB_DB_USER: ${METABASE_DB_USER}
+      MB_DB_PASS: ${METABASE_DB_PASS}
+      MB_DB_PORT: 5432
+    volumes:
+      - /dev/urandom:/dev/random:ro
+
+  postgres:
+    container_name: postgres
+    hostname: postgres
+    image: postgres:latest
+    restart: unless-stopped
+    networks:
+      - backend
+    environment:
+      POSTGRES_DB: ${METABASE_DB_NAME}
+      POSTGRES_USER: ${METABASE_DB_USER}
+      POSTGRES_PASSWORD: ${METABASE_DB_PASS}
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+networks:
+  metabase:
+    name: metabase-network
+    external: true
+  backend:
+    name: metabase-backend
+    external: false
