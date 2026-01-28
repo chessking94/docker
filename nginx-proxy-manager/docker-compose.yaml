@@ -17,6 +17,7 @@ services:
       - ittools
       - metabase
       - portainer
+      - rabbitmq
       - speedtest
       - uptimekuma
 
@@ -38,6 +39,9 @@ networks:
     external: false
   portainer:
     name: portainer-network
+    external: false
+  rabbitmq:
+    name: rabbitmq-network
     external: false
   speedtest:
     name: speedtest-network

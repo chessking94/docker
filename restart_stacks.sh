@@ -12,6 +12,7 @@ SUB_DIRS=(
     "portainer"
     "adguard"
     "metabase"
+    "rabbitmq"
 )
 
 SUB_DIRS+=("nginx-proxy-manager")  # append this at the end to ensure it stays last
