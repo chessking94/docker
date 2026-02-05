@@ -12,6 +12,7 @@ services:
       - ./letsencrypt:/etc/letsencrypt
     networks:
       - proxy
+      - analysisworker
       - ghost
       - homepage
       - ittools
@@ -25,6 +26,9 @@ networks:
   proxy:
     name: proxy-bridge
     external: true
+  analysisworker:
+    name: analysisworker-network
+    external: false
   ghost:
     name: ghost-network
     external: false

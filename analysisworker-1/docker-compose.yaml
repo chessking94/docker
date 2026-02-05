@@ -1,0 +1,24 @@
+services:
+  analysisworker1:
+    container_name: analysisworker-1
+    hostname: analysisworker-1
+    image: git.hunthome.dev/hunthome/analysisworker:latest
+    restart: unless-stopped
+    environment:
+      RABBITMQ_HOST: ${RABBITMQ_HOST}
+      RABBITMQ_USER: ${RABBITMQ_USER}
+      RABBITMQ_PASS: ${RABBITMQ_PASS}
+      RABBITMQ_ROUTE: ${RABBITMQ_ROUTE}
+      ENGINE_PATH: ${ENGINE_PATH}
+      CONNECTION_STRING: ${CONNECTION_STRING}
+      LICHESS_APITOKEN: ${LICHESS_APITOKEN}
+    dns:
+      - 192.168.86.4  # local DNS server
+      - 1.1.1.1
+    networks:
+      - analysisworker
+
+networks:
+  analysisworker:
+    name: analysisworker-network
+    external: true
