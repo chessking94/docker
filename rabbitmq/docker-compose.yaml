@@ -3,6 +3,11 @@ services:
     container_name: rabbitmq
     hostname: rabbitmq
     image: rabbitmq:management
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2'
     restart: unless-stopped
     ports:
       - 5672:5672
