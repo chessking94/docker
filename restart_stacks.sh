@@ -1,7 +1,7 @@
 #!/bin/bash
 DOCKER_ROOT="/srv/docker"
 
-# stack directories
+# stack directories - of the base directories, stop RabbitMQ last (so it starts back up first)
 SUB_DIRS=(
     "uptime-kuma"
     "netalertx"
@@ -12,8 +12,8 @@ SUB_DIRS=(
     "portainer"
     "adguard"
     "metabase"
-    "rabbitmq"
     "analysisworker-1"
+    "rabbitmq"
 )
 
 SUB_DIRS+=("nginx-proxy-manager")  # append this at the end to ensure it stays last
