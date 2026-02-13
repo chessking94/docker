@@ -8,7 +8,7 @@ services:
     networks:
       - homepage
     volumes:
-      - ${DOCKER_VOLUME_ROOT}/homepage/config:/app/config
+      - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock
     env_file:
       - .env
