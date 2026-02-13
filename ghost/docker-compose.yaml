@@ -18,7 +18,7 @@ services:
       database__connection__password: ${GHOST_DB_PASS}
       database__connection__database: ${GHOST_DB_NAME}
     volumes:
-      - ./content:/var/lib/ghost/content
+      - ${DOCKER_VOLUME_ROOT}/ghost/content:/var/lib/ghost/content
 
   db:
     container_name: ghost-db
@@ -32,7 +32,7 @@ services:
       MYSQL_PASSWORD: ${GHOST_DB_PASS}
       MYSQL_DATABASE: ${GHOST_DB_NAME}
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ${DOCKER_VOLUME_ROOT}/ghost/mysql:/var/lib/mysql
 
 networks:
   ghost:

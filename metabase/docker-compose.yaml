@@ -33,7 +33,7 @@ services:
       POSTGRES_USER: ${METABASE_DB_USER}
       POSTGRES_PASSWORD: ${METABASE_DB_PASS}
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - ${DOCKER_VOLUME_ROOT}/metabase/postgres_data:/var/lib/postgresql/data
 
 networks:
   metabase:

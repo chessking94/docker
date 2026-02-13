@@ -16,8 +16,8 @@ services:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     volumes:
-      - ./data:/var/lib/rabbitmq
-      - ./logs:/var/log/rabbitmq
+      - ${DOCKER_VOLUME_ROOT}/rabbitmq/data:/var/lib/rabbitmq
+      - ${DOCKER_VOLUME_ROOT}/rabbitmq/logs:/var/log/rabbitmq
     networks:
      - rabbitmq
 
