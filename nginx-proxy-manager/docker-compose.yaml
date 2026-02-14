@@ -13,6 +13,7 @@ services:
     networks:
       - proxy
       - analysisworker
+      - bookstack
       - ghost
       - homepage
       - ittools
@@ -28,6 +29,9 @@ networks:
     external: true
   analysisworker:
     name: analysisworker-network
+    external: false
+  bookstack:
+    name: bookstack-network
     external: false
   ghost:
     name: ghost-network

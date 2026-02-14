@@ -1,0 +1,52 @@
+services:
+  bookstack:
+    container_name: bookstack
+    hostname: bookstack
+    image: lscr.io/linuxserver/bookstack:latest
+    restart: unless-stopped
+    ports:
+      - 6875:80
+    networks:
+      - bookstack
+      - backend
+    depends_on:
+      - bookstack-mariadb
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - APP_URL=${APP_URL}
+      - APP_KEY=${APP_KEY}
+      - DB_HOST=bookstack-mariadb
+      - DB_PORT=3306
+      - DB_DATABASE=bookstack
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ${DOCKER_VOLUME_ROOT}/bookstack/app:/config  # change this for production
+
+  bookstack-db:
+    container_name: bookstack-mariadb
+    hostname: bookstack-mariadb
+    image: lscr.io/linuxserver/mariadb:latest
+    restart: unless-stopped
+    networks:
+      - backend
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=bookstack
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - ${DOCKER_VOLUME_ROOT}/bookstack/db:/config  # change this for production
+
+networks:
+  bookstack:
+    name: bookstack-network
+    external: true
+  backend:
+    name: bookstack-backend
+    external: false
