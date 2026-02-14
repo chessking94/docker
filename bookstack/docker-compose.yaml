@@ -25,7 +25,7 @@ services:
     volumes:
       - ${DOCKER_VOLUME_ROOT}/bookstack/app:/config  # change this for production
 
-  bookstack-maria:
+  bookstack-mariadb:
     container_name: bookstack-mariadb
     hostname: bookstack-mariadb
     image: lscr.io/linuxserver/mariadb:latest
