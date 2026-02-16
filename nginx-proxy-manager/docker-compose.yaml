@@ -15,6 +15,7 @@ services:
       - analysisworker
       - bookstack
       - ghost
+      - gitea
       - homepage
       - ittools
       - metabase
@@ -35,6 +36,9 @@ networks:
     external: false
   ghost:
     name: ghost-network
+    external: false
+  gitea:
+    name: gitea-network
     external: false
   homepage:
     name: homepage-network

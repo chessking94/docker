@@ -15,6 +15,7 @@ SUB_DIRS=(
     "analysisworker-1"
     "rabbitmq"
     "bookstack"
+    "gitea"
 )
 
 SUB_DIRS+=("nginx-proxy-manager")  # append this at the end to ensure it stays last
