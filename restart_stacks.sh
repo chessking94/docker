@@ -4,12 +4,10 @@ DOCKER_ROOT="/srv/docker"
 # stack directories - of the base directories, stop RabbitMQ last (so it starts back up first)
 SUB_DIRS=(
     "uptime-kuma"
-    "netalertx"
     "homepage"
     "ghost"
     "speedtest-tracker"
     "it-tools"
-    "portainer"
     "adguard"
     "metabase"
     "analysisworker-1"
