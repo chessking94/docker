@@ -10,14 +10,14 @@ services:
       - bookstack
       - backend
     depends_on:
-      - bookstack-mariadb
+      - bookstack-db
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
       - APP_URL=${APP_URL}
       - APP_KEY=${APP_KEY}
-      - DB_HOST=bookstack-mariadb
+      - DB_HOST=bookstack-db
       - DB_PORT=3306
       - DB_DATABASE=bookstack
       - DB_USERNAME=${DB_USERNAME}
@@ -25,9 +25,9 @@ services:
     volumes:
       - ${DOCKER_VOLUME_ROOT}/bookstack/app:/config  # change this for production
 
-  bookstack-mariadb:
-    container_name: bookstack-mariadb
-    hostname: bookstack-mariadb
+  bookstack-db:
+    container_name: bookstack-db
+    hostname: bookstack-db
     image: lscr.io/linuxserver/mariadb:latest
     restart: unless-stopped
     networks:

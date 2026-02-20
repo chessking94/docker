@@ -10,10 +10,10 @@ services:
       - metabase
       - backend
     depends_on:
-      - postgres
+      - metabase-db
     environment:
       MB_DB_TYPE: postgres
-      MB_DB_HOST: postgres
+      MB_DB_HOST: metabase-db
       MB_DB_DBNAME: ${METABASE_DB_NAME}
       MB_DB_USER: ${METABASE_DB_USER}
       MB_DB_PASS: ${METABASE_DB_PASS}
@@ -21,9 +21,9 @@ services:
     volumes:
       - /dev/urandom:/dev/random:ro
 
-  postgres:
-    container_name: postgres
-    hostname: postgres
+  metabase-db:
+    container_name: metabase-db
+    hostname: metabase-db
     image: postgres:latest
     restart: unless-stopped
     networks:

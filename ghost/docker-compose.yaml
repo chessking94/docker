@@ -1,6 +1,7 @@
 services:
   ghost:
     container_name: ghost
+    hostname: ghost
     image: ghost:latest
     restart: unless-stopped
     ports:
@@ -9,19 +10,20 @@ services:
       - ghost
       - backend
     depends_on:
-      - db
+      - ghost-db
     environment:
       url: ${URL}
       database__client: mysql
-      database__connection__host: db
+      database__connection__host: ghost-db
       database__connection__user: ${GHOST_DB_USER}
       database__connection__password: ${GHOST_DB_PASS}
       database__connection__database: ${GHOST_DB_NAME}
     volumes:
       - ${DOCKER_VOLUME_ROOT}/ghost/content:/var/lib/ghost/content
 
-  db:
+  ghost-db:
     container_name: ghost-db
+    hostname: ghost-db
     image: mariadb:latest
     restart: unless-stopped
     networks:

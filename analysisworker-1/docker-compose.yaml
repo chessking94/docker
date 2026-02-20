@@ -13,8 +13,8 @@ services:
       CONNECTION_STRING: ${CONNECTION_STRING}
       LICHESS_APITOKEN: ${LICHESS_APITOKEN}
     dns:
-      - 192.168.86.4  # local DNS server
-      - 1.1.1.1
+      - ${LOCAL_DNS_SERVER}
+      - 1.1.1.1  # fallback
     networks:
       - analysisworker
 

@@ -19,7 +19,6 @@ services:
       - homepage
       - ittools
       - metabase
-      - portainer
       - rabbitmq
       - speedtest
       - uptimekuma
@@ -30,34 +29,31 @@ networks:
     external: true
   analysisworker:
     name: analysisworker-network
-    external: false
+    external: true
   bookstack:
     name: bookstack-network
-    external: false
+    external: true
   ghost:
     name: ghost-network
-    external: false
+    external: true
   gitea:
     name: gitea-network
-    external: false
+    external: true
   homepage:
     name: homepage-network
-    external: false
+    external: true
   ittools:
     name: ittools-network
-    external: false
+    external: true
   metabase:
     name: metabase-network
-    external: false
-  portainer:
-    name: portainer-network
-    external: false
+    external: true
   rabbitmq:
     name: rabbitmq-network
-    external: false
+    external: true
   speedtest:
     name: speedtest-network
-    external: false
+    external: true
   uptimekuma:
     name: uptimekuma-network
-    external: false
+    external: true

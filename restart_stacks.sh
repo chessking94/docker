@@ -1,7 +1,7 @@
 #!/bin/bash
 DOCKER_ROOT="/srv/docker"
 
-# stack directories - of the base directories, stop RabbitMQ last (so it starts back up first)
+# stack directories
 SUB_DIRS=(
     "uptime-kuma"
     "homepage"
@@ -19,7 +19,7 @@ SUB_DIRS=(
 SUB_DIRS+=("nginx-proxy-manager")  # append this at the end to ensure it stays last
 
 # directories to not fully stop the container
-SKIP_STOP_DIRS=("nginx-proxy-manager" "adguard")
+SKIP_STOP_DIRS=("nginx-proxy-manager" "adguard" "gitea")
 
 # stop all stacks
 for SUB_DIR in "${SUB_DIRS[@]}"; do
@@ -35,6 +35,9 @@ for SUB_DIR in "${SUB_DIRS[@]}"; do
     }
     sudo docker compose down
 done
+
+cd "${DOCKER_ROOT}"
+sudo bash create_networks.sh
 
 # restart stacks in reverse order they were stopped
 for ((i=${#SUB_DIRS[@]}-1; i>=0; i--)); do

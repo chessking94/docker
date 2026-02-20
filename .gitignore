@@ -1,2 +1,5 @@
 # all environment files
 .env
+
+# directories
+/homepage/config/logs
