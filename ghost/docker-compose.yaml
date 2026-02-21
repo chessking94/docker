@@ -2,7 +2,7 @@ services:
   ghost:
     container_name: ghost
     hostname: ghost
-    image: ghost:latest
+    image: ghost:6.19.2-bookworm
     restart: unless-stopped
     ports:
       - 2368:2368
@@ -24,7 +24,7 @@ services:
   ghost-db:
     container_name: ghost-db
     hostname: ghost-db
-    image: mariadb:latest
+    image: mariadb:11.4.8
     restart: unless-stopped
     networks:
       - backend

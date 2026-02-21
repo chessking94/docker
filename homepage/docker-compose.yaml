@@ -1,14 +1,14 @@
 services:
   homepage:
     container_name: homepage
-    image: ghcr.io/gethomepage/homepage:latest
+    image: ghcr.io/gethomepage/homepage:v1.10.1
     restart: unless-stopped
     ports:
       - 3000:3000
     networks:
       - homepage
     volumes:
-      - ./config:/app/config
+      - ./config:/app/config  # this needs to be kept at this location!
       - /var/run/docker.sock:/var/run/docker.sock
     env_file:
       - .env

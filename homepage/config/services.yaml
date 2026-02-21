@@ -40,6 +40,18 @@
             fields: ["notifications", "issues", "pulls"]
             key: {{HOMEPAGE_VAR_WIDGET_GITEA_APITOKEN}}
 
+    - What's Up Docker:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_WUD_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_WUD_URL}}
+        description: Docker Image Monitoring
+        widget:
+            type: whatsupdocker
+            url: {{HOMEPAGE_VAR_WIDGET_WUD_URL}}
+            fields: ["monitoring", "updates"]
+            username: {{HOMEPAGE_VAR_WIDGET_WUD_USER}}
+            password: {{HOMEPAGE_VAR_WIDGET_WUD_PASS}}
+
     # - api:
 
     # - api-qa:
@@ -107,13 +119,7 @@
 
 #     - docker01:
 
-#     - git01:
-
 #     - dc02:
-
-#     - bookstack02:
-
-#     - ftp03:
 
 #     - automate03:
 
@@ -123,18 +129,13 @@
 
 #     - sqldev01:
 
-#     - test-ws19:
-
-#     - opn01:
-
 # - External:
 #     - Ghost:
 
 
 # TODO: look into the following widgets
-# Crowdsec - on exposed services, i.e. ftp03
+# Crowdsec - on exposed services
 # Glaces - monitors computer stats
 # Minecraft - since why not?
 # OpenWeatherMap - weather is always a nice touch
-# Watchtower - update base container images
 # wg-easy - VPN with web UI

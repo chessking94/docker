@@ -8,7 +8,6 @@ NETWORKS=(
     "gitea-network"
     "homepage-network"
     "ittools-network"
-    "metabase-network"
     "rabbitmq-network"
     "speedtest-network"
     "uptimekuma-network"

@@ -2,7 +2,7 @@ services:
   bookstack:
     container_name: bookstack
     hostname: bookstack
-    image: lscr.io/linuxserver/bookstack:latest
+    image: lscr.io/linuxserver/bookstack:25.12.7
     restart: unless-stopped
     ports:
       - 6875:80
@@ -23,12 +23,12 @@ services:
       - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
     volumes:
-      - ${DOCKER_VOLUME_ROOT}/bookstack/app:/config  # change this for production
+      - ${DOCKER_VOLUME_ROOT}/bookstack/app:/config
 
   bookstack-db:
     container_name: bookstack-db
     hostname: bookstack-db
-    image: lscr.io/linuxserver/mariadb:latest
+    image: lscr.io/linuxserver/mariadb:11.4.8
     restart: unless-stopped
     networks:
       - backend
@@ -41,7 +41,7 @@ services:
       - MYSQL_USER=${DB_USERNAME}
       - MYSQL_PASSWORD=${DB_PASSWORD}
     volumes:
-      - ${DOCKER_VOLUME_ROOT}/bookstack/db:/config  # change this for production
+      - ${DOCKER_VOLUME_ROOT}/bookstack/db:/config
 
 networks:
   bookstack:

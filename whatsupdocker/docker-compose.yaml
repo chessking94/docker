@@ -1,0 +1,21 @@
+services:
+  app:
+    container_name: whatsupdocker
+    hostname: whatsupdocker
+    image: getwud/wud:8.2.0
+    restart: unless-stopped
+    ports:
+      - 3002:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKER_VOLUME_ROOT}/whatsupdocker/store:/store
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+     - whatsup
+    env_file:
+      - .env
+
+networks:
+  whatsup:
+    name: proxy-bridge
+    external: true

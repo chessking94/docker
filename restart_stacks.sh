@@ -9,11 +9,11 @@ SUB_DIRS=(
     "speedtest-tracker"
     "it-tools"
     "adguard"
-    "metabase"
     "analysisworker-1"
     "rabbitmq"
     "bookstack"
     "gitea"
+    "whatsupdocker"
 )
 
 SUB_DIRS+=("nginx-proxy-manager")  # append this at the end to ensure it stays last
