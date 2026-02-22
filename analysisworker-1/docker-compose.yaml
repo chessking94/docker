@@ -4,6 +4,8 @@ services:
     hostname: analysisworker-1
     image: git.hunthome.dev/hunthome/analysisworker:1.0.1
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+$'
     environment:
       RABBITMQ_HOST: ${RABBITMQ_HOST}
       RABBITMQ_USER: ${RABBITMQ_USER}

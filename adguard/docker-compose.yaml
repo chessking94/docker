@@ -4,6 +4,9 @@ services:
     hostname: adguard
     image: adguard/adguardhome:v0.107.72
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^v\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       # - 4000:3000/tcp # only required during initial setup
       - 1180:80/tcp # web interface after setup

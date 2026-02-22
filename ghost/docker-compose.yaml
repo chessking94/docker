@@ -4,6 +4,9 @@ services:
     hostname: ghost
     image: ghost:6.19.2-bookworm
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+-bookworm$'
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       - 2368:2368
     networks:
@@ -26,6 +29,9 @@ services:
     hostname: ghost-db
     image: mariadb:11.4.8
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
     networks:
       - backend
     environment:

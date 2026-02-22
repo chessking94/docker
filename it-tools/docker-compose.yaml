@@ -3,6 +3,8 @@ services:
     image: corentinth/it-tools:2024.10.22-7ca5933
     container_name: it-tools
     restart: unless-stopped
+    labels:
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       - 8080:80
     networks:

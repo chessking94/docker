@@ -9,6 +9,9 @@ services:
           memory: 4G
           cpus: '2'
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+-management$'
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       - 5672:5672
       - 15672:15672
