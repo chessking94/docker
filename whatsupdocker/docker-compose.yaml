@@ -4,6 +4,9 @@ services:
     hostname: whatsupdocker
     image: getwud/wud:8.2.0
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       - 3002:3000
     volumes:

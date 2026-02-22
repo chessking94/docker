@@ -3,6 +3,9 @@ services:
     container_name: nginx-proxy-manager
     image: jc21/nginx-proxy-manager:2.13.7
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       - 80:80
       - 81:81

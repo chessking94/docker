@@ -4,6 +4,9 @@ services:
     hostname: bookstack
     image: lscr.io/linuxserver/bookstack:25.12.7
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       - 6875:80
     networks:
@@ -30,6 +33,9 @@ services:
     hostname: bookstack-db
     image: lscr.io/linuxserver/mariadb:11.4.8
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
     networks:
       - backend
     environment:

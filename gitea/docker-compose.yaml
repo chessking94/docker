@@ -4,6 +4,9 @@ services:
     hostname: gitea
     image: gitea/gitea:1.25.4
     restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
     ports:
       - 2999:3000
       # - 222:22  # not using SSH currently
