@@ -2,7 +2,7 @@ services:
   app:
     container_name: whatsupdocker
     hostname: whatsupdocker
-    image: getwud/wud:8.2.0
+    image: getwud/wud:8.2.2
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+$'

@@ -2,7 +2,7 @@ services:
   analysisworker1:
     container_name: analysisworker-1
     hostname: analysisworker-1
-    image: git.hunthome.dev/hunthome/analysisworker:1.0.1
+    image: git.hunthome.dev/hunthome/analysisworker:1.0.2
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+$'
