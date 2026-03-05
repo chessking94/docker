@@ -2,7 +2,7 @@ services:
   ghost:
     container_name: ghost
     hostname: ghost
-    image: ghost:6.19.2-bookworm
+    image: ghost:6.20.1-bookworm
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+-bookworm$'
@@ -27,7 +27,7 @@ services:
   ghost-db:
     container_name: ghost-db
     hostname: ghost-db
-    image: mariadb:11.4.8
+    image: mariadb:12.2.2
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+$'
