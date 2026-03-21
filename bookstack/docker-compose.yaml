@@ -2,10 +2,10 @@ services:
   bookstack:
     container_name: bookstack
     hostname: bookstack
-    image: lscr.io/linuxserver/bookstack:25.12.8
+    image: lscr.io/linuxserver/bookstack:26.03.1
     restart: unless-stopped
     labels:
-      - 'wud.tag.include=^\d+\.\d+\.\d+$'
+      - 'wud.tag.include=^\d+\.\d+\.\d{1,4}$'  # Bookstack has tags like "26.03.20260315", which I don't want to match to
       - wud.trigger.exclude=docker.autoupdate
     ports:
       - 6875:80
