@@ -1,0 +1,16 @@
+name: Update Docker
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  git-pull:
+    runs-on: docker01-ubuntu
+    steps:
+      - name: Pull latest changes
+        run: |
+          cd /srv/docker
+          git restore .
+          git checkout master
+          git pull origin master
