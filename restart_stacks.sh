@@ -14,6 +14,7 @@ SUB_DIRS=(
     "bookstack"
     "gitea"
     "whatsupdocker"
+    "apprise"
 )
 
 SUB_DIRS+=("nginx-proxy-manager")  # append this at the end to ensure it stays last

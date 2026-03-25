@@ -2,6 +2,7 @@
 
 NETWORKS=(
     "proxy-bridge"
+    "apprise-network"
     "analysisworker-network"
     "bookstack-network"
     "ghost-network"
