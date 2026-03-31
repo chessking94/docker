@@ -1,0 +1,21 @@
+services:
+  dockhand:
+    container_name: dockhand
+    hostname: dockhand
+    image: fnsys/dockhand:v1.0.22
+    restart: unless-stopped
+    labels:
+      - 'wud.tag.include=^v\d+\.\d+\.\d+$'
+      - wud.trigger.exclude=docker.autoupdate
+    ports:
+      - 3003:3000
+    networks:
+      - proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKER_VOLUME_ROOT}/dockhand:/app/data
+
+networks:
+  proxy:
+    name: proxy-bridge
+    external: true
