@@ -2,7 +2,7 @@ services:
   ghost:
     container_name: ghost
     hostname: ghost
-    image: ghost:6.23.0-bookworm
+    image: ghost:6.26.0-bookworm
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+-bookworm$'
