@@ -27,6 +27,17 @@
             username: {{HOMEPAGE_VAR_WIDGET_PROX_USER}}
             password: {{HOMEPAGE_VAR_WIDGET_PROX_PASS}}
             node: KAMINO
+    - Dockhand - docker01:
+        # icon:
+        ping: {{HOMEPAGE_VAR_WIDGET_DOCKHAND_URL}}
+        href: {{HOMEPAGE_VAR_WIDGET_DOCKHAND_URL}}
+        description: Container Management
+        widget:
+            type: dockhand
+            url: {{HOMEPAGE_VAR_WIDGET_DOCKHAND_URL}}
+            environment: docker01
+            username: {{HOMEPAGE_VAR_WIDGET_DOCKHAND_USER}}
+            password: {{HOMEPAGE_VAR_WIDGET_DOCKHAND_PASS}}
 
 - Development:
     - Gitea:
