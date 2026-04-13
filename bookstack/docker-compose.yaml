@@ -2,7 +2,7 @@ services:
   bookstack:
     container_name: bookstack
     hostname: bookstack
-    image: lscr.io/linuxserver/bookstack:26.03.2
+    image: lscr.io/linuxserver/bookstack:26.03.3
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d{1,4}$'  # Bookstack has tags like "26.03.20260315", which I don't want to match to
