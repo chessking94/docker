@@ -31,7 +31,7 @@ services:
   bookstack-db:
     container_name: bookstack-db
     hostname: bookstack-db
-    image: lscr.io/linuxserver/mariadb:11.4.9
+    image: lscr.io/linuxserver/mariadb:11.4.10
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+$'

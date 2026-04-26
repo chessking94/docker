@@ -2,7 +2,7 @@ services:
   adguard:
     container_name: adguard
     hostname: adguard
-    image: adguard/adguardhome:v0.107.73
+    image: adguard/adguardhome:v0.107.74
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^v\d+\.\d+\.\d+$'
