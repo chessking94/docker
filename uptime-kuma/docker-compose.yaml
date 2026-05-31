@@ -2,7 +2,7 @@ services:
   app:
     container_name: uptime-kuma
     hostname: uptime-kuma
-    image: louislam/uptime-kuma:2.3.2
+    image: louislam/uptime-kuma:2.4.0
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+$'
