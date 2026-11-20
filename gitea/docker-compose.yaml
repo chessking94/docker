@@ -2,7 +2,7 @@ services:
   gitea:
     container_name: gitea
     hostname: gitea
-    image: gitea/gitea:28.3.0
+    image: gitea/gitea:28.4.0
     restart: unless-stopped
     labels:
       - 'wud.tag.include=^\d+\.\d+\.\d+$'
